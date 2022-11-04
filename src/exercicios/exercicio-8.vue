@@ -23,7 +23,9 @@ export default {
       }
     },
     onClickAvancar() {
-      this.numeroPaginaAtual = this.numeroPaginaAtual + 1;
+      if (this.numeroPaginaAtual < 10) {
+        this.numeroPaginaAtual = this.numeroPaginaAtual + 1;
+      }
     },
   },
 };
