@@ -1,14 +1,27 @@
 <template>
-  <div class="bg">Espaço para implementar o componente do Exercício 5</div>
+  <div>
+    <div class="bg">Exercicio Cinco TODO List</div>
+    <input type="text" placeholder="digite a tarefa" v-model="tarefaInput" />
+    <button @click="insertTODO">Inserir tarefa</button>
+    <div v-for="todo in todoList" :key="todo">{{ todo }}</div>
+  </div>
 </template>
 
 <script>
 export default {
   name: "ExercicioCinco",
   data() {
-    return {};
+    return {
+      todoList: [],
+      tarefaInput: "",
+    };
   },
-  methods: {},
+  methods: {
+    insertTODO() {
+      this.todoList.push(this.tarefaInput);
+      this.tarefaInput = "";
+    },
+  },
 };
 </script>
 
